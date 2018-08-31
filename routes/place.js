@@ -13,7 +13,7 @@ router.post('/insert', (req, res) => {
   let array = ["Banana", "Orange", "Apple", "Mango"];
 
   array.forEach((element) => {
-    models.Tag.create({ pId: pId, contents: element });
+    models.Tag.create({ pId: pId, tagName: element });
   })
 
   let data = {
@@ -33,7 +33,9 @@ router.post('/search', (req, res) => {
 
   models.Tag.findAll({ tagName: req.body.tagName })
     .then(tag => { if (tag) return tag; res.status(400).json({ message: '해당 태그의 장소가 없습니다.' }); })
-    .then(tag => { })
+    .then(tag => { return models.Place.findAll({ pId: tag.pId }); })
+    .then(place => { res.status(200).json({ message: 'success', place: place }).end(); })
+    .catch(err => { res.status(400).json({ message: err.message }).end(); })
 })
 
 module.exports = router;
