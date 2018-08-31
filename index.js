@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 //db connect
 const models = require("./models");
 models.sequelize
-  .sync({ force: false })
+  .sync({ force: true })
   .then(() => {
     console.log("✓ DB connection success.");
   })

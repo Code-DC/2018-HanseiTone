@@ -1,3 +1,5 @@
+const models = require('.');
+
 module.exports = (sequelize, DataTypes) => {
   const Tag = sequelize.define(
     "Tag",
@@ -11,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       pId: {
         field: "pid",
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        reference: {
+          model: models.Place,
+          key: 'pId'
+        }
       },
       tagName: {
         field: "tag_name",

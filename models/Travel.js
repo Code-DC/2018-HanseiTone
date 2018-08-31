@@ -1,3 +1,5 @@
+const models = require('.');
+
 module.exports = (sequelize, DataTypes) => {
   const Travel = sequelize.define(
     "Travel",
@@ -11,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       uId: {
         field: "uid",
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        reference: {
+          model: models.User,
+          key: 'uId'
+        }
       },
       travelName: {
         field: "travel_name",
