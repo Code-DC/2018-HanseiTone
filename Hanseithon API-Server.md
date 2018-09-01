@@ -1,4 +1,0 @@
-# Hanseithon API-Server
-
-### User
-
