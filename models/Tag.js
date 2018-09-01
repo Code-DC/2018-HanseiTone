@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         field: "tid",
         type: DataTypes.INTEGER,
         autoIncrement: true,
-        primaryKey: true,
+        primaryKey: true
       },
       pId: {
         field: "pid",

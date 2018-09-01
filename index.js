@@ -2,12 +2,15 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+const dummy = require('./tools/dummy');
+
 //db connect
 const models = require("./models");
 models.sequelize
   .sync({ force: true })
   .then(() => {
     console.log("✓ DB connection success.");
+    dummy.insert();
   })
   .catch(err => {
     console.error(err);

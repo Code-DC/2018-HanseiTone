@@ -5,8 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       pId: {
         field: "pid",
         type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
+        primaryKey: true
       },
       placeName: {
         field: "place_name",
@@ -21,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       imagePath: {
         field: "image_path",
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       }
     },
     {

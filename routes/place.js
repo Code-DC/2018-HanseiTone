@@ -5,7 +5,7 @@ const router = express.Router();
 const models = require("../models");
 
 //user_route
-router.post('/', (req, res) => {
+router.post('/search', (req, res) => {
   if (!req.body.tagName) return res.status(400).json({ message: '찾을 장소의 태그를 입력해주세요.' }).end();
 
   models.Place.findAll({ include: { model: models.Tag, where: { tagName: req.body.tagName } } })

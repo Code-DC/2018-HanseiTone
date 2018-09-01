@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 
   models.User.findOne({ where: { uId: req.user.uId } })
     .then(user => { if (user) return models.Travel.create(data); throw new Error('없는 유저 입니다.'); })
-    .then(result => { let array = ["Hello", "World", "!"]; array.forEach((element) => { models.Course.create({ tId: result.tId, courselName: element }); }); res.status(200).json({ message: 'Ok', result: result }).end(); })
+    .then(result => { let array = req.body.course; array.forEach((element) => { models.Course.create({ tId: result.tId, courselName: element }); }); res.status(200).json({ message: 'Ok', result: result }).end(); })
     .catch(err => { res.status(400).json({ message: err.message }).end(); })
 })
 
