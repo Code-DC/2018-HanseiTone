@@ -17,6 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         field: "address",
         type: DataTypes.STRING,
         allowNull: false
+      },
+      imagePath: {
+        field: "image_path",
+        type: DataTypes.STRING,
+        allowNull: false
       }
     },
     {

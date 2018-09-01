@@ -3,8 +3,6 @@ const express = require('express');
 const router = express.Router();
 
 const models = require("../models");
-const config = require("../config/config");
-
 
 //admin_route
 router.post('/insert', (req, res) => {
@@ -14,16 +12,13 @@ router.post('/insert', (req, res) => {
     address: req.body.address
   }
 
-  models.Place.create(data)
-    .then(result => { res.status(200).json({ message: 'Ok', result: result }).end(); })
-    .catch(err => { res.status(400).json({ message: err.message }).end(); })
-
-
   let array = ["Banana", "Orange", "Apple", "Mango"];
 
-  array.forEach((element) => {
-    models.Tag.create({ pId: req.body.pId, tagName: element });
-  })
+  models.Place.create(data)
+    .then(result => { return result; })
+    .then(result => { array.forEach((element) => { models.Tag.create({ pId: result.pId, tagName: element }); }) })
+    .then(() => { res.status(200).json({ message: 'Ok' }).end(); })
+    .catch(err => { res.status(400).json({ message: err.message }).end(); })
 })
 
 
