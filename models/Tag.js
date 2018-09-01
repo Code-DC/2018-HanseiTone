@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       pId: {
         field: "pid",
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER(80),
         allowNull: false,
         reference: {
           model: models.Place,

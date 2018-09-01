@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       uId: {
         field: "uid",
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER(80),
         allowNull: false,
         reference: {
           model: models.User,
