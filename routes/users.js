@@ -21,7 +21,7 @@ router.post('/users', (req, res) => {
 })
 
 //login route
-router.post('/', (req, res) => {
+router.post('/login', (req, res) => {
   if (!req.body.email) return res.status(400).json({ message: 'Please enter your email.' }).end();
   if (!req.body.password) return res.status(400).json({ message: 'Please enter your password.' }).end();
 

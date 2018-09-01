@@ -34,6 +34,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User.hasMany(db.Travel, { foreignKey: 'uId' });
+db.Travel.hasMany(db.Course, { foreignKey: 'tId' });
 db.Place.hasMany(db.Tag, { foreignKey: 'pId' });
 
 module.exports = db;

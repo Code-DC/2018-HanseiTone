@@ -1,42 +1,36 @@
 const models = require('.');
 
 module.exports = (sequelize, DataTypes) => {
-  const Travel = sequelize.define(
-    "Travel",
+  const Course = sequelize.define(
+    "Course",
     {
-      tId: {
-        field: "tid",
+      cId: {
+        field: "cid",
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-      uId: {
-        field: "uid",
+      tId: {
+        field: "tid",
         type: DataTypes.INTEGER,
         allowNull: false,
         reference: {
-          model: models.User,
-          key: 'uId'
+          model: models.Travel,
+          key: 'tId'
         }
       },
-      travelName: {
-        field: "travel_name",
+      courselName: {
+        field: "coursel_name",
         type: DataTypes.STRING,
         allowNull: false
       },
-      like: {
-        field: "like",
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 0
-      }
     },
     {
       underscored: true,
       freezeTableName: true,
-      tableName: "travel",
+      tableName: "course",
       timestamps: true
     }
   );
-  return Travel;
+  return Course;
 };
