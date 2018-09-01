@@ -21,12 +21,12 @@ module.exports = (sequelize, DataTypes) => {
       },
       travelName: {
         field: "travel_name",
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(126),
         allowNull: false
       },
       like: {
         field: "like",
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(126),
         allowNull: false,
         defaultValue: 0
       }

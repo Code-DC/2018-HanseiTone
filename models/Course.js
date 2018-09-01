@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       courselName: {
         field: "coursel_name",
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(126),
         allowNull: false
       },
     },

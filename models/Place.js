@@ -9,17 +9,17 @@ module.exports = (sequelize, DataTypes) => {
       },
       placeName: {
         field: "place_name",
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(126),
         allowNull: false
       },
       address: {
         field: "address",
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(126),
         allowNull: false
       },
       imagePath: {
         field: "image_path",
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(126),
         allowNull: true
       }
     },

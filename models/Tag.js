@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       tagName: {
         field: "tag_name",
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(126),
         allowNull: false
       }
     },
