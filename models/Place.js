@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       pId: {
         field: "pid",
-        type: DataTypes.INTEGER(191),
+        type: DataTypes.INTEGER(80),
         primaryKey: true
       },
       placeName: {

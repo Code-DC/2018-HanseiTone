@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       cId: {
         field: "cid",
-        type: DataTypes.INTEGER(191),
+        type: DataTypes.INTEGER(80),
         autoIncrement: true,
         primaryKey: true,
       },

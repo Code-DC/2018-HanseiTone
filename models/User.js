@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       uId: {
         field: "uid",
-        type: DataTypes.INTEGER(191),
+        type: DataTypes.INTEGER(80),
         autoIncrement: true,
         primaryKey: true
       },
